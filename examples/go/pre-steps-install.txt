@@ -17,10 +17,12 @@ go get net/http
 Step #3 Run applicatiion with specficy database hostname
 DB_HOSTNAME=localhost go run main.go
 
+Step #4 Build artifact
+go build -o executable.bin
 
-Step #4 Functionality Test
+Step #5 Functionality Test
 
-4.1) Open New terminal and run
+5.1) Open New terminal and run
 while true; do 
   curl -s -o /dev/null -I -w "%{http_code}" http://localhost:8080/hello
   sleep 1s
@@ -28,10 +30,10 @@ while true; do
 done
 
 
-4.2) Open new terminal and run
+5.2) Open new terminal and run
 NODE_PID=$(ps -ef | grep go | grep "/tmp" | awk 'BEGIN{FS=" "} {print $2}')
 kill -SIGTERM ${NODE_PID}
 
 
-4.3) Check connection on database
+5.3) Check connection on database
 SELECT pid,datname,usename,application_name,client_addr,state FROM pg_stat_activity;
