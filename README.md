@@ -2,6 +2,10 @@
 
 Graceful shutdown is the one of best practice that all of develops and operators must be implement for your applications and there are many article to guide you to implement it but not every method can do it effectively. So gather the method that already proved, it worked.
 
+In these example use the same scenario
+1) This is an api application
+2) This application connect to postgresql database
+
 Normal behaviors for graceful shutdown
 After applictaion recieved SIGTERM, the graceful shutdown will be triggered, Then
 1) Stop recieve new session

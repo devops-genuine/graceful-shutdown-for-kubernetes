@@ -13,8 +13,16 @@ app.get('/', function (req, res) {
    console.log('Hit Main Page')
    setTimeout(function () { //simulate a long request 10 seconds before client get back respond
 	  res.writeHead(200, {'Content-Type': 'text/plain'});
-	  res.end('Hello Greceful Shutdown with Express\n');
+	  res.end('Hello\n');
 	}, 10000);
+})
+
+app.get('/hello', function (req, res) {
+   console.log('Hit Main Page')
+   setTimeout(function () { //simulate a long request 10 seconds before client get back respond
+    res.writeHead(200, {'Content-Type': 'text/plain'});
+    res.end('Hello Greceful Shutdown with Express\n');
+  }, 10000);
 })
 
 app.get('/db', async (req, res) => {
